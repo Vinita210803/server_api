@@ -24,7 +24,7 @@ export class User{
         }
     }
     add = (req,res) => {
-        const user = this.users.find(u => u.id === req.params.id)
+        const user = this.users.find(u => u.contact === req.body.contact)
         if(user){
             res.status(409).send({
                 bsuccess : false,
